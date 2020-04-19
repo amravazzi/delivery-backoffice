@@ -2,7 +2,7 @@
 <div>
   <ul class="nav row" id="deliveryNavMenu">
     <li class="nav-item col-12 col-md-auto">
-      <a class="nav-link" v-bind:class="{ 'active' : $route.path == '/delivery/dashboard' }" href="/delivery/dashboard">
+      <a class="nav-link" v-bind:class="{ 'active' : $route.path == '/' }" href="/">
         <i class="material-icons align-middle">dashboard</i>
         <span class="align-middle">Dashboard</span>
       </a>

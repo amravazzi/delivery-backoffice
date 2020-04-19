@@ -36,7 +36,7 @@
 
 <script>
 import Auth from '@/auth'
-import MegaMenu from '@/components/common/MegaMenu'
+// import MegaMenu from '@/components/common/MegaMenu'
 import BranchMenu from '@/components/common/BranchMenu'
 import AccountMenu from '@/components/common/AccountMenu'
 import DeliveryNav from '@/components/common/DeliveryNav'
@@ -45,7 +45,7 @@ export default {
   name: 'DeliveryUpperNav',
   props: ['title'],
   components: {
-    MegaMenu,
+    // MegaMenu,
     BranchMenu,
     AccountMenu,
     DeliveryNav

@@ -38,10 +38,10 @@
 
 <script>
 import Auth from '@/auth'
-import Filters from '@/components/common/Filters'
-import ReportFilters from '@/components/common/ReportFilters'
-import MegaMenu from '@/components/common/MegaMenu'
-import FiltersModal from '@/components/common/FiltersModal'
+// import Filters from '@/components/common/Filters'
+// import ReportFilters from '@/components/common/ReportFilters'
+// import MegaMenu from '@/components/common/MegaMenu'
+// import FiltersModal from '@/components/common/FiltersModal'
 import BranchMenu from '@/components/common/BranchMenu'
 import AccountMenu from '@/components/common/AccountMenu'
 
@@ -49,10 +49,10 @@ export default {
   name: 'UpperNav',
   props: ['title'],
   components: {
-    Filters,
-    FiltersModal,
-    MegaMenu,
-    ReportFilters,
+    // Filters,
+    // FiltersModal,
+    // MegaMenu,
+    // ReportFilters,
     BranchMenu,
     AccountMenu
   },

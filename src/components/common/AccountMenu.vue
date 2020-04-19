@@ -2,9 +2,9 @@
 	<div class="row">
 
     <div class="logo-drop-menu-wrapper col-4">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="apps-menu">
+      <!-- <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="apps-menu">
         <i class="material-icons">apps</i>
-      </a>
+      </a> -->
       <div class="dropdown-menu dropdown-apps-menu" aria-labelledby="apps-menu">
         <div class="row">
           <div class="col-sm-6 app-icon-wrapper">
@@ -15,7 +15,7 @@
             </a>
           </div>
           <div class="col-sm-6 app-icon-wrapper">
-            <a class="" href="/delivery/dashboard">
+            <a class="" href="/">
               <i class="material-icons" id="delivery">place</i>
               <span class="hidden-sm-down">Delivery</span>
               <p class="hidden-sm-up">Delivery</p>
