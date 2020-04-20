@@ -3,8 +3,8 @@
   <div class="row align-items-center" style="margin-top:60px">
 
     <div class="col-sm-12 col-md-4 hidden-sm-down login-title">
-      <h1>Relatórios gerenciais</h1>
-      <h3>Vendas</h3>
+      <h1>Delivery Web</h1>
+      <h3>Backoffice</h3>
     </div>
 
     <div class="col-sm-12 col-md-2 col-lg-4 hidden-sm-down"></div>
@@ -12,7 +12,7 @@
     <div class="col-sm-12 col-md-6 col-lg-4">
       <div class="card login-card">
         <div class="card-block">
-          <img class="card-img-top login-logo" src="../../assets/img/logo.svg" alt="Altec">
+          <img class="card-img-top login-logo" src="../../assets/img/logo.svg" alt="Your Company">
           <!-- <spinner v-show="loggingIn"></spinner> -->
           <transition name="fade">
             <div class="alert alert-danger" v-if="typeof error === 'string' &&  error">
@@ -81,7 +81,7 @@ export default {
         emailAddress: this.credentials.emailAddress,
         password: this.credentials.password
       }
-      this.$auth.login(credentials, 'Dashboard')
+      this.$auth.login(credentials, 'DeliveryDashboard')
         .then((response) => {
           this.loggingIn = false
           if (response.status !== 200) {

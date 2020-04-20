@@ -6,15 +6,6 @@ Vue.use(Router)
 const router = new Router({
   mode: 'history',
   routes: [
-    // Delivery Routes
-    // {
-    //   path: '/login',
-    //   name: 'Login',
-    //   component: function (resolve) {
-    //     require(['@/components/login/Login.vue'], resolve)
-    //   },
-    //   beforeEnter: guardLoginRoute
-    // },
     {
       path: '/',
       name: 'DeliveryDashboard',
@@ -24,7 +15,15 @@ const router = new Router({
       beforeEnter: guardRoute
     },
     {
-      path: '/delivery/orders',
+      path: '/login',
+      name: 'Login',
+      component: function (resolve) {
+        require(['@/components/login/Login.vue'], resolve)
+      },
+      beforeEnter: guardLoginRoute
+    },
+    {
+      path: '/orders',
       name: 'DeliveryOrders',
       component: function (resolve) {
         require(['@/components/delivery/DeliveryOrders.vue'], resolve)
@@ -32,7 +31,7 @@ const router = new Router({
       beforeEnter: guardRoute
     },
     {
-      path: '/delivery/products',
+      path: '/products',
       name: 'DeliveryProducts',
       component: function (resolve) {
         require(['@/components/delivery/DeliveryProducts.vue'], resolve)
@@ -40,7 +39,7 @@ const router = new Router({
       beforeEnter: guardRoute
     },
     {
-      path: '/delivery/customers',
+      path: '/customers',
       name: 'DeliveryCustomers',
       component: function (resolve) {
         require(['@/components/delivery/DeliveryCustomers.vue'], resolve)
@@ -48,7 +47,7 @@ const router = new Router({
       beforeEnter: guardRoute
     },
     {
-      path: '/delivery/settings',
+      path: '/settings',
       name: 'DeliverySettingsIndex',
       component: function (resolve) {
         require(['@/components/delivery/DeliverySettingsIndex.vue'], resolve)
@@ -56,7 +55,7 @@ const router = new Router({
       beforeEnter: guardRoute
     },
     {
-      path: '/delivery/settings/layout',
+      path: '/settings/layout',
       name: 'DeliverySettingsLayout',
       component: function (resolve) {
         require(['@/components/delivery/DeliverySettingsLayout.vue'], resolve)
@@ -64,7 +63,7 @@ const router = new Router({
       beforeEnter: guardRoute
     },
     {
-      path: '/delivery/settings/basics',
+      path: '/settings/basics',
       name: 'DeliverySettingsBasics',
       component: function (resolve) {
         require(['@/components/delivery/DeliverySettingsBasics.vue'], resolve)
@@ -72,7 +71,7 @@ const router = new Router({
       beforeEnter: guardRoute
     },
     {
-      path: '/delivery/settings/associates',
+      path: '/settings/associates',
       name: 'DeliverySettingsAssociates',
       component: function (resolve) {
         require(['@/components/delivery/DeliverySettingsAssociates.vue'], resolve)
@@ -80,15 +79,7 @@ const router = new Router({
       beforeEnter: guardRoute
     },
     {
-      path: '/delivery/settings/menu',
-      name: 'DeliverySettingsMenu',
-      component: function (resolve) {
-        require(['@/components/delivery/DeliverySettingsMenu.vue'], resolve)
-      },
-      beforeEnter: guardRoute
-    },
-    {
-      path: '/delivery/settings/delivery-areas',
+      path: '/settings/delivery-areas',
       name: 'DeliverySettingsDeliveryAreas',
       component: function (resolve) {
         require(['@/components/delivery/DeliverySettingsDeliveryAreas.vue'], resolve)
@@ -96,7 +87,7 @@ const router = new Router({
       beforeEnter: guardRoute
     },
     {
-      path: '/delivery/settings/payments',
+      path: '/settings/payments',
       name: 'DeliverySettingsPayments',
       component: function (resolve) {
         require(['@/components/delivery/DeliverySettingsPayments.vue'], resolve)
@@ -104,7 +95,7 @@ const router = new Router({
       beforeEnter: guardRoute
     },
     {
-      path: '/delivery/settings/timetable',
+      path: '/settings/timetable',
       name: 'DeliverySettingsTimetable',
       component: function (resolve) {
         require(['@/components/delivery/DeliverySettingsTimetable.vue'], resolve)
