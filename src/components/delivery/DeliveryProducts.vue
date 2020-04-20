@@ -70,8 +70,8 @@ export default {
   methods: {
     test1 () {
       console.log(1)
-    }
-    // getproducts () {
+    },
+    getproducts () {
     //   // this.loading = false
 
     //   this.branchFilter = JSON.parse(localStorage.getItem('branchFilter'))
@@ -111,7 +111,7 @@ export default {
     //   .catch((response) => {
     //     this.loading = false
     //   })
-    // }
+    }
   },
   mounted () {
   },

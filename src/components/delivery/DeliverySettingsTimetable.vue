@@ -122,7 +122,7 @@ export default {
     openAddHolidayModal () {
       this.$modal.show('add-holiday-modal')
     },
-    // getOrders () {
+    getOrders () {
     //   // this.loading = false
 
     //   this.branchFilter = JSON.parse(localStorage.getItem('branchFilter'))
@@ -162,7 +162,7 @@ export default {
     //   .catch((response) => {
     //     this.loading = false
     //   })
-    // }
+    }
   },
   mounted () {
     // this.getOrders()

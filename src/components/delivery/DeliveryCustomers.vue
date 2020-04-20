@@ -62,44 +62,44 @@ export default {
   },
   methods: {
     getcustomers () {
-      // this.loading = false
+    //   // this.loading = false
 
-      this.branchFilter = JSON.parse(localStorage.getItem('branchFilter'))
-      this.$http.get('http://altec-ws-staging-873971210.us-east-1.elb.amazonaws.com/backoffice/reports/v1/sales_products', {
-        // params do endpoint
-        params: {
-          branch: this.branchFilter.map(function (branch) { return branch.id }).join(',')
-        }
-      })
-      .then((response) => {
-        const Rows = []
-        this.customersRows = []
+    //   this.branchFilter = JSON.parse(localStorage.getItem('branchFilter'))
+    //   this.$http.get('http://altec-ws-staging-873971210.us-east-1.elb.amazonaws.com/backoffice/reports/v1/sales_products', {
+    //     // params do endpoint
+    //     params: {
+    //       branch: this.branchFilter.map(function (branch) { return branch.id }).join(',')
+    //     }
+    //   })
+    //   .then((response) => {
+    //     const Rows = []
+    //     this.customersRows = []
 
-        Array.prototype.forEach.call(response.body.products.data, function (row) {
-          const customerRow = {
-            // highlight:
-            // customerName:
-            // customerPhoneContact:
-            // customerEmailContact:
-            // customerCPFDocument:
-            // code: line.code.toString(),
-            // item: line.description.toString(),
-            // unitaryValue: 'R$ ' + utils.moneyFormat(line.unitary_value),
-            // quantity: line.quantity,
-            // totalPrice: 'R$ ' + utils.moneyFormat(line.total_value),
-            // perCent: (line.percent / 100).toString()
-          }
+    //     Array.prototype.forEach.call(response.body.products.data, function (row) {
+    //       const customerRow = {
+    //         // highlight:
+    //         // customerName:
+    //         // customerPhoneContact:
+    //         // customerEmailContact:
+    //         // customerCPFDocument:
+    //         // code: line.code.toString(),
+    //         // item: line.description.toString(),
+    //         // unitaryValue: 'R$ ' + utils.moneyFormat(line.unitary_value),
+    //         // quantity: line.quantity,
+    //         // totalPrice: 'R$ ' + utils.moneyFormat(line.total_value),
+    //         // perCent: (line.percent / 100).toString()
+    //       }
 
-          Rows.push(customerRow)
-        })
+    //       Rows.push(customerRow)
+    //     })
 
-        this.customersRows = Rows
+    //     this.customersRows = Rows
 
-        this.loading = false
-      })
-      .catch((response) => {
-        this.loading = false
-      })
+    //     this.loading = false
+    //   })
+    //   .catch((response) => {
+    //     this.loading = false
+    //   })
     }
   },
   mounted () {

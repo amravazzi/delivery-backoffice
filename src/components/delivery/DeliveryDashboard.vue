@@ -348,156 +348,156 @@ export default {
       }
     },
     getDashboard () {
-      if (!this.filters.loggingIn) {
-        this.loadFilters()
+      // if (!this.filters.loggingIn) {
+      //   this.loadFilters()
 
-        if (this.filters.branchFilter) {
-          this.filters.loggingIn = true
+      //   if (this.filters.branchFilter) {
+      //     this.filters.loggingIn = true
 
-          this.$http.get('http://altec-ws-staging-873971210.us-east-1.elb.amazonaws.com/backoffice/reports/v1/dashboard', { params: {
-            branch: this.filters.branchFilter.map(function (branch) { return branch.id }).join(','),
-            period: this.filters.periodoFilter.value,
-            operation: this.filters.operacaoFilter.value
-          }})
-            .then((response) => {
-              this.billing = (this.filters.faturamentoFilter.value === 'net_billing') ? response.data.net_billing : response.data.gross_billing
+      //     this.$http.get('http://altec-ws-staging-873971210.us-east-1.elb.amazonaws.com/backoffice/reports/v1/dashboard', { params: {
+      //       branch: this.filters.branchFilter.map(function (branch) { return branch.id }).join(','),
+      //       period: this.filters.periodoFilter.value,
+      //       operation: this.filters.operacaoFilter.value
+      //     }})
+      //       .then((response) => {
+      //         this.billing = (this.filters.faturamentoFilter.value === 'net_billing') ? response.data.net_billing : response.data.gross_billing
 
-              this.billingValue = utils.moneyFormat(this.billing.data[2])
+      //         this.billingValue = utils.moneyFormat(this.billing.data[2])
 
-              this.dataFaturamento = {
-                labels: this.billing.labels,
-                datasets: [
-                  {
-                    borderWidth: 1,
-                    backgroundColor: ['#8DDAB0', '#8DDAB0', '#50C786'],
-                    data: this.billing.data
-                  }
-                ]
-              }
+      //         this.dataFaturamento = {
+      //           labels: this.billing.labels,
+      //           datasets: [
+      //             {
+      //               borderWidth: 1,
+      //               backgroundColor: ['#8DDAB0', '#8DDAB0', '#50C786'],
+      //               data: this.billing.data
+      //             }
+      //           ]
+      //         }
 
-              this.quantityPeopleValue = response.data.quantity_people.data[2]
-              this.dataCliente = {
-                labels: response.data.quantity_people.labels,
-                datasets: [
-                  {
-                    borderWidth: 1,
-                    backgroundColor: ['#B1C2EB', '#B1C2EB', '#839EDF'],
-                    data: response.data.quantity_people.data
-                  }
-                ]
-              }
+      //         this.quantityPeopleValue = response.data.quantity_people.data[2]
+      //         this.dataCliente = {
+      //           labels: response.data.quantity_people.labels,
+      //           datasets: [
+      //             {
+      //               borderWidth: 1,
+      //               backgroundColor: ['#B1C2EB', '#B1C2EB', '#839EDF'],
+      //               data: response.data.quantity_people.data
+      //             }
+      //           ]
+      //         }
 
-              this.billingPerCustomer = (this.filters.faturamentoFilter.value === 'net_billing') ? response.data.net_billing_per_customer : response.data.gross_billing_per_customer
-              this.billingPerCustomerValue = utils.moneyFormat(this.billingPerCustomer.data[2])
+      //         this.billingPerCustomer = (this.filters.faturamentoFilter.value === 'net_billing') ? response.data.net_billing_per_customer : response.data.gross_billing_per_customer
+      //         this.billingPerCustomerValue = utils.moneyFormat(this.billingPerCustomer.data[2])
 
-              this.dataTicket = {
-                labels: this.billingPerCustomer.labels,
-                datasets: [
-                  {
-                    backgroundColor: ['#9B9B9B', '#9B9B9B', '#424242'],
-                    data: this.billingPerCustomer.data
-                  }
-                ]
-              }
+      //         this.dataTicket = {
+      //           labels: this.billingPerCustomer.labels,
+      //           datasets: [
+      //             {
+      //               backgroundColor: ['#9B9B9B', '#9B9B9B', '#424242'],
+      //               data: this.billingPerCustomer.data
+      //             }
+      //           ]
+      //         }
 
-              this.billingPercentage = this.billing.media.progressive
-              this.billingPerCustomerPercentage = this.billingPerCustomer.media.progressive
-              this.quantityPeoplePercentage = response.data.quantity_people.media.progressive
+      //         this.billingPercentage = this.billing.media.progressive
+      //         this.billingPerCustomerPercentage = this.billingPerCustomer.media.progressive
+      //         this.quantityPeoplePercentage = response.data.quantity_people.media.progressive
 
-              this.dataPayment = {
-                labels: response.data.payments.labels,
-                datasets: [
-                  {
-                    backgroundColor: ['#41BD76', '#F5A623', '#38BBF7', '#8763C6', '#00B2B9', '#FFDA4D'],
-                    data: response.data.payments.data
-                  }
-                ]
-              }
+      //         this.dataPayment = {
+      //           labels: response.data.payments.labels,
+      //           datasets: [
+      //             {
+      //               backgroundColor: ['#41BD76', '#F5A623', '#38BBF7', '#8763C6', '#00B2B9', '#FFDA4D'],
+      //               data: response.data.payments.data
+      //             }
+      //           ]
+      //         }
 
-              this.billingEvolution = (this.filters.faturamentoFilter.value === 'net_billing') ? response.data.net_billing_evolution : response.data.gross_billing_evolution
+      //         this.billingEvolution = (this.filters.faturamentoFilter.value === 'net_billing') ? response.data.net_billing_evolution : response.data.gross_billing_evolution
 
-              this.dataBillingEvolution = {
-                labels: this.billingEvolution.labels,
-                datasets: [
-                  {
-                    backgroundColor: 'rgba(237, 246, 246, 0.7)',
-                    borderColor: '#26BEC4',
-                    pointBackgroundColor: '#4CABAD',
-                    pointBorderColor: '#fff',
-                    pointBorderWidth: 1,
-                    pointRadius: 3,
-                    pointHoverRadius: 6,
-                    data: this.billingEvolution.data
-                  }
-                ]
-              }
+      //         this.dataBillingEvolution = {
+      //           labels: this.billingEvolution.labels,
+      //           datasets: [
+      //             {
+      //               backgroundColor: 'rgba(237, 246, 246, 0.7)',
+      //               borderColor: '#26BEC4',
+      //               pointBackgroundColor: '#4CABAD',
+      //               pointBorderColor: '#fff',
+      //               pointBorderWidth: 1,
+      //               pointRadius: 3,
+      //               pointHoverRadius: 6,
+      //               data: this.billingEvolution.data
+      //             }
+      //           ]
+      //         }
 
-              var labels = []
-              for (var i = 0; i < response.data.sales_product.labels.length; i++) {
-                labels.push('')
-              }
+      //         var labels = []
+      //         for (var i = 0; i < response.data.sales_product.labels.length; i++) {
+      //           labels.push('')
+      //         }
 
-              this.dataProductSales = {
-                labels: labels,
-                datasets: [
-                  {
-                    labels: response.data.sales_product.labels,
-                    totalValue: response.data.sales_product.total_value,
-                    backgroundColor: ['#554851', '#FFDA4D', '#7894DA', '#41BD76', '#F5A623', '#38BBF7', '#8763C6', '#4CABAD', '#D82502', '#9B9B9B'],
-                    data: response.data.sales_product.data
-                  }
-                ]
-              }
+      //         this.dataProductSales = {
+      //           labels: labels,
+      //           datasets: [
+      //             {
+      //               labels: response.data.sales_product.labels,
+      //               totalValue: response.data.sales_product.total_value,
+      //               backgroundColor: ['#554851', '#FFDA4D', '#7894DA', '#41BD76', '#F5A623', '#38BBF7', '#8763C6', '#4CABAD', '#D82502', '#9B9B9B'],
+      //               data: response.data.sales_product.data
+      //             }
+      //           ]
+      //         }
 
-              var labelsGroup = []
-              for (var iGroup = 0; iGroup < response.data.owner_product_groups.labels.length; iGroup++) {
-                labelsGroup.push('')
-              }
+      //         var labelsGroup = []
+      //         for (var iGroup = 0; iGroup < response.data.owner_product_groups.labels.length; iGroup++) {
+      //           labelsGroup.push('')
+      //         }
 
-              this.dataGroupSales = {
-                labels: response.data.owner_product_groups.labels,
-                datasets: [
-                  {
-                    labels: response.data.owner_product_groups.labels,
-                    backgroundColor: ['#554851', '#FFDA4D', '#7894DA', '#41BD76', '#F5A623', '#38BBF7', '#8763C6', '#4CABAD', '#D82502', '#9B9B9B'],
-                    data: response.data.owner_product_groups.data
-                  }
-                ]
-              }
+      //         this.dataGroupSales = {
+      //           labels: response.data.owner_product_groups.labels,
+      //           datasets: [
+      //             {
+      //               labels: response.data.owner_product_groups.labels,
+      //               backgroundColor: ['#554851', '#FFDA4D', '#7894DA', '#41BD76', '#F5A623', '#38BBF7', '#8763C6', '#4CABAD', '#D82502', '#9B9B9B'],
+      //               data: response.data.owner_product_groups.data
+      //             }
+      //           ]
+      //         }
 
-              // this.discount = utils.moneyFormat(response.data.discount)
-              this.totalCanceled = utils.moneyFormat(response.data.total_canceled)
-              // this.totalTransferred = utils.moneyFormat(response.data.total_transferred)
-              this.addition = utils.moneyFormat(response.data.addition)
+      //         // this.discount = utils.moneyFormat(response.data.discount)
+      //         this.totalCanceled = utils.moneyFormat(response.data.total_canceled)
+      //         // this.totalTransferred = utils.moneyFormat(response.data.total_transferred)
+      //         this.addition = utils.moneyFormat(response.data.addition)
 
-              this.bestDay = this.billingEvolution.best_day.date
-              this.worstDay = this.billingEvolution.worst_day.date
-              this.bestDayBilling = utils.moneyFormat((this.filters.faturamentoFilter.value === 'net_billing') ? this.billingEvolution.best_day.net_billing : this.billingEvolution.best_day.gross_billing)
-              this.worstDayBilling = utils.moneyFormat((this.filters.faturamentoFilter.value === 'net_billing') ? this.billingEvolution.worst_day.net_billing : this.billingEvolution.worst_day.gross_billing)
-              this.averageBilling = utils.moneyFormat(this.billingEvolution.average)
+      //         this.bestDay = this.billingEvolution.best_day.date
+      //         this.worstDay = this.billingEvolution.worst_day.date
+      //         this.bestDayBilling = utils.moneyFormat((this.filters.faturamentoFilter.value === 'net_billing') ? this.billingEvolution.best_day.net_billing : this.billingEvolution.best_day.gross_billing)
+      //         this.worstDayBilling = utils.moneyFormat((this.filters.faturamentoFilter.value === 'net_billing') ? this.billingEvolution.worst_day.net_billing : this.billingEvolution.worst_day.gross_billing)
+      //         this.averageBilling = utils.moneyFormat(this.billingEvolution.average)
 
-              var branches = []
+      //         var branches = []
 
-              this.billingPerBranch = (this.filters.faturamentoFilter.value === 'net_billing') ? response.data.net_billing_per_branch : response.data.gross_billing_per_branch
+      //         this.billingPerBranch = (this.filters.faturamentoFilter.value === 'net_billing') ? response.data.net_billing_per_branch : response.data.gross_billing_per_branch
 
-              this.billingPerBranch.forEach(function (branch) {
-                branches.push({
-                  'name': branch['name'],
-                  'billing': utils.moneyFormat(branch['billing']),
-                  'quantityPeople': branch['quantity_people'],
-                  'billingPerCustomer': utils.moneyFormat(branch['billing_per_customer'])
-                })
-              })
+      //         this.billingPerBranch.forEach(function (branch) {
+      //           branches.push({
+      //             'name': branch['name'],
+      //             'billing': utils.moneyFormat(branch['billing']),
+      //             'quantityPeople': branch['quantity_people'],
+      //             'billingPerCustomer': utils.moneyFormat(branch['billing_per_customer'])
+      //           })
+      //         })
 
-              this.billingBranch = branches
+      //         this.billingBranch = branches
 
-              this.filters.loggingIn = false
-            })
-            .catch((response) => {
-              this.filters.loggingIn = false
-            })
-        }
-      }
+      //         this.filters.loggingIn = false
+      //       })
+      //       .catch((response) => {
+      //         this.filters.loggingIn = false
+      //       })
+      //   }
+      // }
     }
   },
   beforeDestroy: function () {
