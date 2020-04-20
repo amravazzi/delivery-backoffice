@@ -1,7 +1,5 @@
 # Delivery Backoffice
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/22f37867-caec-4abc-b4e7-92cc5e744a30/deploy-status)](https://app.netlify.com/sites/delivery-backoffice-cfdc0e/deploys)
-
 > Projeto de frontend de um backoffice para um sistema de delivery de loja física
 
 ## Exemplo funcional
