@@ -13,6 +13,7 @@ import vmodal from 'vue-js-modal'
 import VueMask from 'v-mask'
 import VTooltip from 'v-tooltip'
 import VueGoodTable from 'vue-good-table'
+import vuedraggable from 'vuedraggable'
 
 const moment = require('moment')
 require('moment/locale/pt-br')
@@ -34,6 +35,8 @@ Vue.use(Auth)
 Vue.use(VTooltip)
 
 Vue.use(VueGoodTable)
+
+Vue.use(vuedraggable)
 
 Vue.mixin({
   data: function () {
