@@ -57,7 +57,7 @@ import DashboardFooter from '@/components/common/DashboardFooter'
 import Spinner from '@/components/common/Spinner'
 import OrderDetailsModal from '@/components/modals/OrderDetailsModal'
 
-var numeral = require('numeral')
+const numeral = require('numeral')
 
 export default {
   name: 'DeliveryOrders',

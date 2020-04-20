@@ -146,7 +146,7 @@ import LineChart from '../../LineChart.js'
 import DoughnutChart from '../../DoughnutChart.js'
 import Spinner from '@/components/common/Spinner'
 
-var numeral = require('numeral')
+const numeral = require('numeral')
 
 export default {
   name: 'DeliveryDashboard',

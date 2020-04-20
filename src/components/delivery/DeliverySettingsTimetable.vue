@@ -101,7 +101,7 @@ import Spinner from '@/components/common/Spinner'
 import DeliveryShiftModal from '@/components/modals/DeliveryShiftModal'
 import DeliveryHolidayModal from '@/components/modals/DeliveryHolidayModal'
 
-var numeral = require('numeral')
+const numeral = require('numeral')
 
 export default {
   name: 'DeliveryOrders',

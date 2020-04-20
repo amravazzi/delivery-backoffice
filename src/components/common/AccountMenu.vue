@@ -27,7 +27,7 @@
 
     <div class="logo-drop-menu-wrapper col-4">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="account-menu">
-        <img style="" class="uppernav-logo" src="../../assets/img/logo.svg" alt="Altec">
+        <img style="" class="uppernav-logo" src="../../assets/img/logo.svg" alt="Your Company">
       </a>
       <div class="dropdown-menu uppernav-logo-drop-menu" style="margin-left:-10px;" aria-labelledby="account-menu">
         <a class="dropdown-item" href="#">Conta</a>

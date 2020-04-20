@@ -48,7 +48,7 @@ import DeliveryUpperNavMobile from '@/components/common/DeliveryUpperNavMobile'
 import DashboardFooter from '@/components/common/DashboardFooter'
 import Spinner from '@/components/common/Spinner'
 
-var numeral = require('numeral')
+const numeral = require('numeral')
 
 export default {
   name: 'DeliveryOrders',

@@ -54,7 +54,7 @@ import DashboardFooter from '@/components/common/DashboardFooter'
 import Spinner from '@/components/common/Spinner'
 import DeliveryAreasModal from '@/components/modals/DeliveryAreasModal'
 
-var numeral = require('numeral')
+const numeral = require('numeral')
 
 export default {
   name: 'DeliverySettingsDeliveryAreas',

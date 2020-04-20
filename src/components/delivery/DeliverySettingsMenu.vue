@@ -6,7 +6,7 @@
   <DeliveryUpperNavMobile></DeliveryUpperNavMobile>
 
   <div class="container-fluid h-100">
-    <spinner v-show="loading"></spinner>
+    <!-- <spinner v-show="loading"></spinner> -->
     <div class="row">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">Configurações</a></li>
@@ -23,7 +23,7 @@
 
               <div class="col-sm-12">
 
-                <draggable class="list-group" element="ul" v-model="list" :options="dragOptions" :move="onMove" @start="isDragging=true" @end="isDragging=false">
+                <vuedraggable class="list-group" element="ul" v-model="list" :options="dragOptions" :move="onMove" @start="isDragging=true" @end="isDragging=false">
                   <transition-group type="transition" :name="'flip-list'">
                     <li class="list-group-item justify-content-between" v-for="element in list" :key="element.order" style="cursor:move">
 
@@ -32,7 +32,7 @@
 
                     </li>
                   </transition-group>
-                </draggable>
+                </vuedraggable>
 
               </div>
 
@@ -50,27 +50,20 @@
 
 <script>
 
-import moment from 'moment'
-import draggable from 'vuedraggable'
+import vuedraggable from 'vuedraggable'
 import DeliveryUpperNav from '@/components/common/DeliveryUpperNav'
 import DeliveryUpperNavMobile from '@/components/common/DeliveryUpperNavMobile'
 import DashboardFooter from '@/components/common/DashboardFooter'
 import Spinner from '@/components/common/Spinner'
 
-var numeral = require('numeral')
-
-// const
-
 export default {
   name: 'DeliverySettingsMenu',
   components: {
-    moment,
     DeliveryUpperNav,
     DeliveryUpperNavMobile,
     DashboardFooter,
     Spinner,
-    draggable,
-    numeral
+    vuedraggable,
   },
   data () {
     return {
@@ -179,7 +172,7 @@ export default {
     }
   },
   mounted () {
-    this.getOrders()
+    // this.getOrders()
   },
   computed: {
     dragOptions () {

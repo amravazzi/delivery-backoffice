@@ -77,7 +77,7 @@
         <div class="dropdown-wrapper" style="width:100%;margin:0;">
           <div class="dropdown">
             <button class="btn btn-secondary" type="button" id="uppernav-dropdown-store-menu-mobile" data-toggle="dropdown" style="background-color:#00b2b9;border-radius:0;color:#FFF;" v-on:click.prevent="getDashboard()">
-              <img style="width:2em;padding:5px;padding-top:2px" class="uppernav-logo" src="../../assets/img/refresh.svg" alt="Altec" v-bind:class="{ 'loading': filters.loggingIn }"></a>Atualizar
+              <img style="width:2em;padding:5px;padding-top:2px" class="uppernav-logo" src="../../assets/img/refresh.svg" alt="Your Company" v-bind:class="{ 'loading': filters.loggingIn }"></a>Atualizar
             </button>
           </div>
         </div>
