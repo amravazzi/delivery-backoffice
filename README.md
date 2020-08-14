@@ -1,10 +1,10 @@
 # Delivery Backoffice
 
-> Projeto de frontend de um backoffice para um sistema de delivery de loja física
+> Frontend project of a B2B2C delivery system backoffice using Vue 2.
 
-## Exemplo funcional
+## Working example
 
-Você pode testar e ver a implementação [aqui](https://delivery-backoffice-cfdc0e.netlify.app/). Não há dados ainda para popular os gráficos e tabelas. Use `user@example.com` como emails e `password` como senha.
+You can test and check the implementation [here](https://delivery-backoffice-cfdc0e.netlify.app/). There are no data yet to populate the graphs and tables. Use user@example.com as email and password as password.
 
 ## Build Setup
 
@@ -21,5 +21,3 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
